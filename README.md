@@ -7,3 +7,7 @@ O sistema tem como intuíto facilitar as saídas escolares, visando facilitar a 
 # O que esse repositorio possui ?
 
 Em nosso Repositorio será possível encontrar a documentação tecnica na pasta de "Documentação Tecnica", DDL de tabelas sql em nosso diretorio de "Banco de Dados", Códigos de java baseado em nosso diagrama de classes no diretorio "Java" e toda nossa prototipação de tela funcional em códigos XML que é utilizado diretamente no Android Studio, o contéudo de tela encontra-se na Pasta "Figma"
+
+
+# Venha conhecer nosso app!
+
