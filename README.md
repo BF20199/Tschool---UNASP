@@ -22,6 +22,9 @@ Nossto time é composto por 4 pessoas, cada um possui skills especificas, porém
 Integrantes: 
 
 Bruno Feitosa
+<br>
 Felipe Melo
+<br>
 Felipe Pinheiro 
+<br>
 Matheus Lucena
