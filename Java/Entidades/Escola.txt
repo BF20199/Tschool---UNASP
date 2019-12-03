@@ -1,0 +1,9 @@
+	df = spark.read.json('arquivo')
+	
+	df.show()
+	
+	df.printSchema() -- Estrutura show tabl 
+	
+	df.columns
+	
+	df.describe().show()
