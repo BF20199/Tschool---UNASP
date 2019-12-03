@@ -1,0 +1,29 @@
+[RF01] Cadastro da aluno
+[O sistema deve permitir que a escola cadastre novos alunos no evento.]
+
+[RF02] Manutenção de cadastro
+[O sistema deve manter cadastro de todos os alunos participantes dos eventos, para consulta futura.]
+
+[RF03] Status de alunos confirmados
+[O sistema deve permitir que a escola altere o status dos alunos já confirmados.]
+
+[RF04] Informações dos eventos
+[O sistema deve permitir que a escola poste informações sobre os eventos que vão ser realizados.]
+
+[RF05] Receber notificação de evento
+[O sistema deve permitir que o usuário(pai), receba uma notificação sobre um novo evento que o filho possa participar.]
+
+[RF06] Receber confirmação de evento
+[O sistema deve emitir uma notificação para o pai, confirmando a presença do filho no evento.]
+
+[RF07] Autorização do evento
+[O sistema deve permitir que o usuário(pai), autorize o filho a participar do evento através de um termo de consentimento.]
+
+[RF08] Portabilidade do sistema
+[O sistema deve ter portabilidade móvel para o controle dos pais de qualquer lugar.]
+
+[RF09] Pagamentos
+[O sistema deve ter suporte para pagamentos online dos eventos, através de cartões.]
+
+[RF010] Confirmação de presença
+[O sistema deve permitir que a escola confirme a presença e a saída do filho do evento.]

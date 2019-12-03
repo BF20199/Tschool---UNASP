@@ -1,0 +1,32 @@
+[RNF01] Inclusão de Banco de Dados
+[Deverá ser implementado e usado alguns ou um dos sgbd's abaixo: 
+Oracle 
+My SQL 
+Mongo DB]
+
+[RN02] Tempo de resposta
+[Tempo de resposta para cada “click” deverá ser realizado no máximo em 0.05sec.]
+
+[RN03] Matrículas dos pais aos dados da escola
+[Cadastro dos pais deverá estar linkado ao sistema de matrículas da escola]
+
+[RN04] Notificações
+[As notificações só serão descartadas após o envio de resposta. Sucedendo o envio de resposta o sistema deve notificar a resposta para a escola]
+
+[RN05] Ambiente de programação
+[O sistema deverá ser programado em java.]
+
+[RN06] Padrão para ambiente de programação
+[No ambiente de programação, o projeto deverá ser realizado no padrão MVC.]
+
+[RN07] Acesso escola
+[A escola deverá ter acesso somente ao envio de resposta]
+
+[RN08] Erro senha
+[Se o usuário errar a senha mais de três vezes, enviar um token de confirmação para o e-mail do mesmo.]
+
+[RN09] Manutenção do sistema
+[Fazer manutenções semanais no sistema (bugs, backups, etc.), no período da madrugada, caso o sistema venha a ficar indisponível (queda de servidor, etc.), uma mensagem deverá ser emitida.]
+
+[RN10] Tamanho do sistema para implementação de app
+[Tamanho máximo do sistema pra app é de no máximo 100MB.]
