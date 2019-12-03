@@ -1,0 +1,52 @@
+create table classes(
+id_classe integer,
+numero_alunos integer,
+periodo nvarchar(20),
+primary key(id_classe) 
+);
+
+create table escola(
+id_escola integer,
+nome_escola nvarchar(50),
+cep nvarchar(20),
+numero_alunos integer,
+id_classe integer,
+foreign key(id_classe) references classes(id_classe)
+);
+
+create table evento(
+id_evento integer,
+data_evento date,
+horario_evento time,
+local_evento nvarchar(30),
+primary key(id_evento)
+);
+
+create table aluno(
+ra_aluno integer,
+nome_aluno nvarchar(30),
+idade integer,
+primary key(ra_aluno)
+);
+
+create table participantes(
+ra_aluno integer,
+id_classe integer,
+foreign key(ra_aluno) references aluno(ra_aluno),
+foreign key(id_classe) references classes(id_classe)
+);
+
+create table responsaveis(
+id_responsavel integer,
+cpf integer,
+nome_responsavel nvarchar(40),
+cep nvarchar(20),
+primary key(id_responsavel)
+);
+
+create table possui(
+id_responsavel integer,
+ra_aluno integer,
+foreign key(id_responsavel) references responsaveis(id_responsavel),
+foreign key(ra_aluno) references aluno(ra_aluno)
+);
