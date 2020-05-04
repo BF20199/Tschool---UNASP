@@ -1,0 +1,272 @@
+/*Container principal*/
+.home-container {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;/*alinhamento vertical*/
+    justify-content: center;/*alinhamento horizontal*/
+}
+
+/*Barra superior*/
+.home-container nav {
+    width: 100%;
+    height: 80px;
+    padding: 20px 20px 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    align-items: center;
+}
+
+.home-container nav img {
+    height: auto;
+}
+
+.home-container nav .bts {
+    width: 410px;
+}
+
+.home-container nav .bts button {
+    margin-top: 0;
+    width: 200px;
+    height: 38px;
+}
+
+.home-container nav .bts button + button {
+    margin-left: 10px;
+    background: white;
+    border: 1px solid #F6B422;
+    color: #F6B422;
+}
+
+/*Lado esquedo corpo do site*/
+.home-container section.more {
+    width: 1100px;
+    height: 85%;
+    display: flex;
+    text-align: center;
+    color: #5A5A5A;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Lado direito corpo do site*/
+.home-container section div .button{
+    margin-top: 25px;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+}
+
+/*--------------------------------------Modal Login---------------------------------------------*/
+/*Container geral do modal de login, onde seu display default é none*/
+.modal-container-login {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;     
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.1);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2000;
+}
+
+/*Quando a classe 'show' for adicionada a modal ficará visível, tornando o display flex*/
+.modal-container-login.show {
+    display: flex;
+}
+
+/*Efeito de animação*/
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0)
+    } to {
+        opacity: 1;
+        transform: translate3d(0, 0px, 0)
+    }
+}
+
+/*Aplicar efeito em .login-container*/
+.show .login-container {
+    animation: modal .3s;
+}
+
+/*Modal de Login*/
+.login-container {
+    width: 100%;
+    max-width: 791px;
+    max-height: 250px;
+    padding: 8px;
+    height: 40vh;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    background: #FAFAFA;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Definições formulário lado esquerdo de login*/
+.login-container section.form {
+    width: 100%;
+    text-align: center;
+}
+
+.login-container section.form form h1{
+    font-size: 24px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #5A5A5A;
+}
+
+.login-container section.form a {
+    max-width: 80%;
+    background: white;
+    color: #F6B422;
+    font-size: 15px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+.login-container section.form button:hover {
+    filter: brightness(97%);
+}
+
+.login-container section.form form svg {
+    margin-right: 8px;
+    text-align: center;
+}
+
+/*Definições formulário lado direito de login*/
+.login-container section.formLogin button {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.login-container section.formLogin {
+    width: 100%;
+    max-width: 400px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.login-container section.formLogin form input {
+    margin-top: 12px;
+}
+
+.login-container .close-login {
+    position: absolute;
+    top: 0px;
+    padding: 10px;
+    right: 0px;
+    cursor: pointer;
+}
+
+/*--------------------------------------Modal Cadastro------------------------------------------*/
+/*Container geral do modal de cadastro, onde seu display default é none*/
+.modal-container-register {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: none;
+    align-items: center;
+    background: rgba(0,0,0,0.1);
+    justify-content: center;
+    position: fixed;
+    z-index: 2000;
+    top: 0px;
+    left: 0px;
+}
+
+/*Quando a classe 'show' for adicionada a modal ficará visível, tornando o display flex*/
+.modal-container-register.show {
+    display: flex;
+}
+
+/*Aplicar efeito em .register-container*/
+.show .content {
+    animation: modal .3s;
+}
+
+/*Modal de Cadastro*/
+.modal-container-register .content {
+    width: 100%;
+    max-width: 791px;
+    padding: 46px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    background: #FAFAFA;
+    position: relative;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Definições formulário lado esquerdo de cadastro*/
+.modal-container-register .content section {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 30px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.modal-container-register .content section h1 {
+    margin: 20px 0 15px;
+    font-size: 26px;
+    color: #5A5A5A;
+}
+
+.modal-container-register .content section p {
+    font-size: 14px;
+    color: #6C6C6C;
+    line-height: 18px;
+}
+
+.modal-container-register .content section a {
+    max-width: 80%;
+    background: white;
+    margin-top: 15px;
+    color: #F6B422;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+.modal-container-register .content section a:hover {
+    filter: brightness(97%);
+}
+
+/*Definições formulário lado direito de cadastro*/
+.modal-container-register .content form {
+    width: 100%;
+    max-width: 300px;
+}
+
+.modal-container-register .content input {
+    margin-top: 6px;
+}
+
+.modal-container-register .content form .input-group {
+    display: flex;
+}
+
+.modal-container-register .content form .input-group input + input {
+    margin-left: 6px;
+}
+
+.modal-container-register .content .close-register {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    cursor: pointer;
+}

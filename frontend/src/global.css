@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;/*Faz com que o padding se acople no tamanho definido e não o aumente*/
+}
+
+body {
+    font: 400 14px Roboto, sans-serif;
+    background: #FAFAFA;
+    -webkit-font-smoothing: antialiased; /*Melhora visualização da font no Google Chrome*/
+}
+
+input, button, textarea {
+    font: 400 14px Roboto, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+/*configuração padrão para todos os inputs dentro de um form*/
+form input {
+    width: 100%;
+    height: 30px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 6px;
+    padding: 0 12px;
+}
+
+/*configuração padrão para todos os text area dentro de um form*/
+form textarea {
+    width: 100%;
+    min-height: 40px;
+    resize: vertical;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 6px;
+    margin-bottom: 2px;
+    padding: 8px 12px;
+    line-height: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #888;
+}
+
+/*configuração padrão para a classe .button*/
+.button {
+    width: 100%;
+    height: 30px;
+    background: #F6B422;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 12px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+    transition: filter 0.2s;
+}
+
+/*Efeito mouse por cima do botão*/
+.button:hover {
+    filter: brightness(95%);
+}

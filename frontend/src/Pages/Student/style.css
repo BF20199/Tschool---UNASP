@@ -1,0 +1,61 @@
+.student-container, .new-student-container {
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.new-student-container .body {
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
+}
+/*corpo do site*/
+.student-container h1, .new-student-container h1 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #41414d;
+}
+
+/*implementar conforma a página*/
+.new-student-container .side-bar-container ul li:nth-child(1) {
+    color: #555;
+}
+
+/*Colocar os navs a cima*/
+.new-student-container  .nav-bar-container {
+    height: 5vw;
+}
+
+.input-group-student {
+    display: flex;
+}
+
+.input-group-student input + input{
+    margin-left: 10px;
+}
+
+.dropdown-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.student-container .modal-register-container select {
+    border: none;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 6px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    height: 25px;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.student-container select:first-child{
+    margin-right: 5px;
+}

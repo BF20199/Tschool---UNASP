@@ -1,0 +1,104 @@
+/*--------------------------------------Modal Delete---------------------------------------------*/
+/*Container geral do modal de delete, onde seu display default é none*/
+.modal-container-delete {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;     
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.1);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3000;
+}
+
+/*Quando a classe 'show' for adicionada a modal ficará visível, tornando o display flex*/
+.modal-container-delete.show {
+    display: flex;
+}
+
+/*Efeito de animação*/
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0)
+    } to {
+        opacity: 1;
+        transform: translate3d(0, 0px, 0)
+    }
+}
+
+/*Aplicar efeito em .delete-container*/
+.show .delete-container {
+    animation: modal .3s;
+}
+
+/*Modal de Delete*/
+.delete-container {
+    width: 100%;
+    max-width: 500px;
+    max-height: 150px;
+    padding: 8px;
+    height: 33vh;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    background: #FAFAFA;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Definições formulário lado esquerdo de login*/
+.delete-container section.form {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.delete-container section.form h1{
+    font-size: 24px;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #5A5A5A;
+}
+
+.delete-container section.form button:hover {
+    filter: brightness(97%);
+}
+
+.delete-container section.form .btn-confirm {
+    display: flex;
+}
+
+.delete-container section.form .btn-confirm button {
+    margin: 5px;
+    margin-top: 15px;
+}
+
+.delete-container section.form .btn-confirm button:first-child {
+    background: #D2D1D1;
+}
+
+.delete-container section.form .btn-confirm button.bt-lixeira {
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    padding-top: 3px;
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    line-height: 27px;
+    transition: 0.1s;
+    border: 0;
+    background: #EE7155;
+}
+
+.delete-container section.form .btn-confirm button.bt-lixeira:hover {
+    opacity: 1;
+}
