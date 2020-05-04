@@ -28,5 +28,6 @@ Felipe Melo
 Felipe Pinheiro 
 <br>
 Matheus Lucena
-
+< Br>
+Pedro Rizzo
 # TSchool é DEMAISSSS!
