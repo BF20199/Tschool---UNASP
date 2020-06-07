@@ -20,16 +20,29 @@ module.exports = {
         
         const { cpf, name_res, zip_code, email, password } = req.body;
 
-        //const id_school = req.headers.authorization;
-        
-        const [id] = await connection('responsibles').insert({
+        //checar se responsável já existe
+        const resCpfExist = await connection('responsibles').select('id_res').where('cpf', cpf).first();
+        const resEmailExist = await connection('responsibles').select('id_res').where('email', email).first();
+
+        if (resCpfExist) {
+            return res.status(401).json({error: 'Cpf already exist'});
+        } else if (resEmailExist) { return res.status(401).json({error: 'Email already exist'}); }
+
+        //bd sqlite
+        // const [id] = await connection('responsibles').insert({
+        //bd postgress
+        await connection('responsibles').insert({
             cpf,
             name_res,
-            zip_code,email,
-            password        
+            zip_code,
+            email,
+            password
         });
 
-        return res.json({id})
+        //Pegar id da classe criada por causa do postgres que não retorna
+        const id = await connection('responsibles').select('id_res').where('cpf', cpf).first();
+
+        return res.json(id);
     },
 
     async delete(req, res){

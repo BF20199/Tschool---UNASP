@@ -26,7 +26,10 @@ module.exports = {
         const {title, endereco, description, value, date, hr_fin, hr_ini, observation} = req.body;
         const id_school = req.headers.authorization;
 
-        const [id] = await connection('events').insert({
+        //bd sqlite
+        // const [id] = await connection('events').insert({
+        //bd postgress
+        await connection('events').insert({
             title,
             description,
             date,
@@ -36,25 +39,37 @@ module.exports = {
             hr_ini,
             endereco,
             id_school
-        })
-        return res.json({id});
+        });
+
+        return res.json();
     },
 
     async delete(req, res){
-        const {id} = req.params;
+        const { id_event } = req.params;
         const id_school = req.headers.authorization;
 
         const event = await connection('events')
-        .where('id_event', id)
+        .where('id_event', id_event)
         .select('id_school')
         .first();
-    
-        if(event.id_school != id_school){
 
+        if(event.id_school != id_school){
             return res.status(401).json({error: 'Operation not permitted'});
         }
-        await connection('events').where('id_event', id).delete();
 
+        //Deleta eventos por classes relacionados
+        const eventClassExist = await connection('event-class')
+        .where('id_event', id_event)
+        .select('*');
+
+        if(eventClassExist){
+            await connection('event-class')
+            .where('id_event', id_event)
+            .delete();
+        }
+        
+        await connection('events').where('id_event', id_event).delete();
+        
         return res.status(204).send();
     },
 

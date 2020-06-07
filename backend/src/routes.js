@@ -1,20 +1,25 @@
 const express = require('express');
 const routes = express.Router();
 
-const SchoolController = require('./controllers/SchoolController')
-const SessionController = require('./controllers/SessionController')
-const ClassController = require('./controllers/ClassController')
-const ResponsibleController = require('./controllers/ResponsibleController')
-const StudentController = require('./controllers/StudentController')
-const EventController = require('./controllers/EventController')
+const SchoolController = require('./controllers/SchoolController');
+const SessionController = require('./controllers/SessionController');
+const ClassController = require('./controllers/ClassController');
+const ResponsibleController = require('./controllers/ResponsibleController');
+const StudentController = require('./controllers/StudentController');
+const EventController = require('./controllers/EventController');
+const EventClassController = require('./controllers/EventClassController');
+const ParticipantsController = require('./controllers/ParticipantsController');
 
 //Rotas Escolas
 routes.get('/schools', SchoolController.index);
 routes.post('/schools', SchoolController.create);
 routes.delete('/schools/:id', SchoolController.delete);
 
-//Rota de Login
+//Rota de Login Web
 routes.post('/sessions', SessionController.create);
+
+//Rota de Login Mobile
+routes.post('/signin', SessionController.singInApp);
 
 //Rotas Classes
 routes.get('/class',  ClassController.index);
@@ -35,6 +40,7 @@ routes.get('/studentss',  StudentController.index);
 routes.get('/student/:id_class',  StudentController.studentsbyclass);
 routes.get('/students',  StudentController.studentsbyschool);
 routes.get('/studentsbyid/:id',  StudentController.studentbyid);
+routes.get('/studentsbyres',  StudentController.studentsbyresponsible);
 routes.post('/student', StudentController.create);
 routes.delete('/student/:id', StudentController.delete);
 routes.put('/student/:id', StudentController.update);
@@ -43,9 +49,19 @@ routes.put('/student/:id', StudentController.update);
 routes.get('/event',  EventController.index);
 routes.get('/event/:id_event',  EventController.eventbyid);
 routes.post('/event', EventController.create);
-routes.delete('/event/:id', EventController.delete);
+routes.delete('/event/:id_event', EventController.delete);
 routes.put('/event/:id_event', EventController.update);
+routes.get('/eventres', EventClassController.eventbystundet);
 
+//Rotas Event-class
+routes.get('/eventclass',  EventClassController.index);
+routes.post('/eventclass', EventClassController.create);
+routes.delete('/eventclass/:id', EventClassController.delete);
 
+//Rotas Participants
+routes.get('/participants',  ParticipantsController.index);
+routes.get('/participants/:id_class',  ParticipantsController.listparticipantsbyclass);
+routes.post('/participants', ParticipantsController.create);
+routes.put('/participants/:id_event', ParticipantsController.update);
 
 module.exports = routes;

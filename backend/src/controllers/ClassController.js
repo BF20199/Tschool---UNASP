@@ -17,19 +17,31 @@ module.exports = {
     },
 
     async create(req, res){
-        
-    const { nameclass,  num_students, period} = req.body;
+        const { nameclass,  num_students, period} = req.body;
 
-    const id_school = req.headers.authorization;
-    
-    const [id] = await connection('class').insert({
-        nameclass,
-        //num_students,
-        period,
-        id_school
-    });
+        const id_school = req.headers.authorization;
 
-    return res.json({id})
+        //checar se classe já existe
+        const classExist = await connection('class').select('id_class').where('nameclass', nameclass).first();
+
+        if (classExist) {
+            return res.status(401).json({error: 'Class already exist'});
+        }
+
+        //bd sqlite
+        // const [id] = await connection('class').insert({
+        //bd postgress
+        await connection('class').insert({
+            nameclass,
+            //num_students,
+            period,
+            id_school
+        });
+
+        //Pegar id da classe criada por causa do postgres que não retorna
+        const id = await connection('class').select('id_class').where('nameclass', nameclass).first();
+
+        return res.json(id);
     },
 
     async delete(req, res){

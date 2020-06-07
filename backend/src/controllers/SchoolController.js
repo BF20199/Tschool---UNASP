@@ -5,20 +5,33 @@ module.exports = {
 
         return res.json(schools);
     },
+
     async create(req, res){
-        
-    const { nameschool,  num_students, zip_code, email, phone, password} = req.body;
+        const { nameschool,  num_students, zip_code, email, phone, password} = req.body;
 
-    const [id] = await connection('schools').insert({
-        nameschool
-        ,num_students
-        ,zip_code
-        ,email
-        ,phone
-        ,password
-    });
+        //checar se escola já existe
+        const schoolExist = await connection('schools').select('id').where('email', email).first();
 
-    return res.json({id})
+        if (schoolExist) {
+            return res.status(401).json({error: 'Email already exist'});
+        }
+
+        //bd sqlite
+        // const [ id ] = await connection('schools').insert({
+        //bd postgress
+        const school = await connection('schools').insert({
+            nameschool
+            ,num_students
+            ,zip_code
+            ,email
+            ,phone
+            ,password
+        });
+
+        //Pegar id da escola criada por causa do postgres que não retorna
+        const id = await connection('schools').select('id').where('email', email).first();
+
+        return res.json(id);
     },
 
     async delete(req, res){

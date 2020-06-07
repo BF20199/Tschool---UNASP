@@ -8,11 +8,9 @@ exports.up = function(knex) {
         table.string('email').notNullable();
         table.string('phone').notNullable();
         table.string('password').notNullable();
-        
     });
 };
 
 exports.down = function(knex) {
     return knex.schema.dropTable('schools');
-  
 };
