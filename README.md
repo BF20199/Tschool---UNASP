@@ -9,10 +9,10 @@ O objetivo principal é facilitar as saídas escolares, visando facilitar a comu
 Nosso time é composto por 4 pessoas, cada um possui skills específicas, porém todos têm algo em comum: Facilitar e transformar através do uso da tecnologia a experiência e comodidade de todos em sua volta.
 
 Equipe (nosso time, demaisss!):
-. `Bruno Feitosa` (dev) <https://www.linkedin.com/in/bruno-feitosa-84a88a150/>
-. `Felipe Melo` (po) <https://www.linkedin.com/>
-. `Felipe Pinheiro` (dev) <https://www.linkedin.com/in/felipepinheirodantas/>
-. `Matheus Lucena` (po) <https://www.linkedin.com/in/matheus-lucena-a75b86145/>
+- `Bruno Feitosa` (dev) <https://www.linkedin.com/in/bruno-feitosa-84a88a150/>
+- `Felipe Melo` (po) <https://www.linkedin.com/>
+- `Felipe Pinheiro` (dev) <https://www.linkedin.com/in/felipepinheirodantas/>
+- `Matheus Lucena` (po) <https://www.linkedin.com/in/matheus-lucena-a75b86145/>
 
 
 #### REQUISITOS FUNCIONAIS
@@ -196,10 +196,10 @@ create table possui(
 
 #### REFERÊNCIAS, mais informações
 
-. <https://trello.com/b/m7TEyWMi/pi-unasp>
-. <https://www.figma.com/file/FkvgqeY9CFyTPMaG1kR10O/Login?node-id=0%3A1>
-. <https://www.figma.com/file/FkvgqeY9CFyTPMaG1kR10O/TSchool?node-id=186%3A2>
-. <https://github.com/BF20199/Tschool---UNASP>
+- <https://trello.com/b/m7TEyWMi/pi-unasp>
+- <https://www.figma.com/file/FkvgqeY9CFyTPMaG1kR10O/Login?node-id=0%3A1>
+- <https://www.figma.com/file/FkvgqeY9CFyTPMaG1kR10O/TSchool?node-id=186%3A2>
+- <https://github.com/BF20199/Tschool---UNASP>
 
 > TSchool, é show!
 
